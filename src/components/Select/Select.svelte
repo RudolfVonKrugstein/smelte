@@ -72,7 +72,7 @@
     }
   }
 
-  let filterText = null;
+  export let filterText = null;
   $: filteredItems = itemsProcessed.filter(
     i => !filterText || i.text.toLowerCase().includes(filterText)
   );
@@ -144,7 +144,7 @@
   </slot>
 
   {#if showList}
-    <slot name="options">
+    <slot name="options" {filteredItems}>
       <div
         class={o}
         on:click={() => (showList = false)}

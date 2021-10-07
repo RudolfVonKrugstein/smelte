@@ -77,6 +77,11 @@ declare const _SelectProps: {
      * Default: false
      */
     autocomplete?: boolean;
+    /** Text to filter items.
+     *
+     * Default: false
+     */
+    filterText?: string;
     /** No underline variant.
      * 
      * Default: false
@@ -119,7 +124,9 @@ declare const _SelectEvents: {
 };
 declare const _SelectSlots: {
     select: {};
-    options: {};
+    options: {
+        filteredItems: Array<any>
+    };
 };
 export declare type SelectProps = typeof _SelectProps;
 export declare type SelectEvents = typeof _SelectEvents;
